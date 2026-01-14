@@ -13,34 +13,41 @@
     <link rel="stylesheet" type="text/css" href="/Portfolio.css" />
   </head>
   <body>
-    <nav>
+    <nav class="site-nav" aria-label="Primary">
       <div class="nav-container">
-        <div class="left-side">
-          <div class="logo">
-            <img src="/Pictures/IMG_4452.JPG" alt="Your Picture" />
-            <h1>CEDRIC DZAMESHIE</h1>
-          </div>
-          <!-- Hamburger menu icon -->
-          <div class="hamburger-menu">
-            <div class="hamburger-line"></div>
-            <div class="hamburger-line"></div>
-            <div class="hamburger-line"></div>
-          </div>
-          <!-- Hamburger menu links -->
-          <div class="hamburger-words">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contacts</a>
-          </div>
-        </div>
-        <!-- Move the ul.menu here -->
-        <ul class="menu">
-          <li><a href="#home">HOME</a></li>
-          <li><a href="#about">ABOUT</a></li>
-          <li><a href="#projects">PROJECTS</a></li>
-          <li><a href="#contact">CONTACT</a></li>
+        <!-- Logo / Brand -->
+        <a class="brand" href="#home">
+          <img src="Pictures/IMG_4452.JPG" alt="Cedric Dzameshie" />
+          <span>CEDRIC DZAMESHIE</span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <ul class="menu" role="list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
+
+        <!-- Mobile Hamburger -->
+        <button
+          class="hamburger-menu"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Dropdown -->
+      <div class="mobile-nav" aria-label="Mobile menu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
       </div>
     </nav>
 
@@ -62,239 +69,384 @@
           <img src="Pictures/twitter.png" alt="Twitter" />
         </a>
       </div>
-      <div class="home-section-content">
-        <div>
-          <h2>HEY, I'M CEDRIC DZAMESHIE</h2>
-          <p>
-            I am a dedicated beginner in front-end development, constantly
-            honing my skills and expanding my knowledge to craft captivating
-            user experiences as an aspiring frontend web developer
-          </p>
-          <a href="#projects" class="home-section-button">PROJECTS</a>
+      <div class="home-inner">
+        <div class="home-section-content">
+          <div>
+            <h2>Frontend Developer Building Real-World React Apps</h2>
+            <p>
+              I build clean, responsive web applications with React and modern
+              JavaScript. I focus on practical tools that solve real problems
+              and improve through iteration.
+            </p>
+            <div class="home-cta">
+              <a href="#projects" class="home-section-button">VIEW PROJECTS</a>
+              <a
+                class="home-section-button home-section-button--secondary"
+                href="https://github.com/cedricdzameshie"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GITHUB
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="about">
-      <div class="about-section-content">
-        <div class="centered-content">
-          <h2>ABOUT ME</h2>
-          <p>
-            Here you will find more information about me, what I do, and my
-            current skills mostly in <br />
-            terms of programming and technology
-          </p>
+      <div class="section-inner">
+        <div class="section-header">
+          <h2>About</h2>
+          <p>Who I am, what I build, and the tools I use.</p>
         </div>
 
-        <div class="content-grid">
-          <div class="left-content">
-            <h2>Get to Know Me!</h2>
+        <div class="about-grid">
+          <div class="about-card">
+            <h3>Get to know me</h3>
+
             <p>
-              As a <b>beginner</b> in <b>Web Development</b>, I am genuinely
-              enthusiastic about diving into the realms of <b>HTML</b>,
-              <b>JavaScript</b>, and <b>CSS</b>. I believe in continuous
-              learning and improvement, and I am committed to enhancing my
-              skills at a steady pace. I am now seeking <b>Job</b> opportunities
-              where I can contribute, grow, and develop as a web developer.
+              I’m Cedric — a front-end developer focused on building clean,
+              responsive web apps with React and modern JavaScript.
+            </p>
+
+            <p>
+              I enjoy turning ideas into simple, useful products, and I’m
+              actively growing into full-stack by building real projects that
+              ship.
             </p>
             <p>
-              <b>Coding ignites my passion</b>, and I'm dedicated to bringing my
-              ideas to life through simple yet elegant solutions that ensure
-              highly responsive products. Although I am relatively new to this
-              journey, I have been quick to grasp various techniques and
-              technologies, and I continually challenge myself to become better.
+              By shipping projects such as job tracking and task management
+              tools, I’m growing into full-stack development by progressively
+              adding APIs, persistence, and authentication.
             </p>
-            <p>
-              Excellence is my goal, and I take great pride in delivering
-              quality results. As I progress in this dynamic field, I eagerly
-              embrace new challenges and look forward to collaborating on
-              innovative web development projects. If you happen to know of any
-              suitable opportunities that match my skills and experience, please
-              feel free to reach out through any method in the
-              <b>Contact</b> section. I'm excited to make a meaningful
-              contribution!
-            </p>
+
+            <div class="about-actions">
+              <a class="btn" href="#projects">View Projects</a>
+              <a class="btn btn--secondary" href="#contact"> Contact Me </a>
+            </div>
           </div>
 
-          <div class="right-content">
-            <h2>My Skills</h2>
-            <div class="my-skills-container">
-              <div class="my-skills">
-                <ul>
-                  <li>HTML</li>
-                  <li>CSS</li>
-                  <li>Javascript</li>
-                  <li>PHP</li>
-                  <li>React</li>
-                  <li>Github</li>
-                  <li>Responsive Design</li>
-                </ul>
+          <div class="about-card">
+            <h3>Skills</h3>
+
+            <ul class="skills">
+              <li class="skill">React</li>
+              <li class="skill">JavaScript (ES6+)</li>
+              <li class="skill">HTML</li>
+              <li class="skill">CSS</li>
+              <li class="skill">Responsive Design</li>
+              <li class="skill">Git & GitHub</li>
+              <li class="skill">Vite</li>
+              <li class="skill">REST APIs</li>
+              <li class="skill skill--muted">Node.js (learning)</li>
+              <li class="skill skill--muted">SQL (learning)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section section--alt">
+      <div class="section-inner">
+        <header class="section-header">
+          <h2 class="section-title">Projects</h2>
+          <p class="section-subtitle">
+            A few practical apps I’ve built — focused on real UI behavior, clean
+            components, and iteration.
+          </p>
+        </header>
+
+        <div class="projects-grid">
+          <!-- Job Tracker -->
+          <article class="project-card">
+            <img
+              class="project-thumb"
+              src="/Pictures/job-tracker.png.png"
+              alt="Job Tracker app screenshot"
+            />
+            <div class="project-body">
+              <h3 class="project-title">Job Tracker</h3>
+              <p class="project-desc">
+                Track applications with search, filters, sorting, inline edits,
+                and localStorage persistence.
+              </p>
+
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">Vite</span>
+                <span class="tag">CSS</span>
+              </div>
+
+              <div class="project-actions">
+                <a
+                  class="btn"
+                  href="https://cedricdzameshie.github.io/job-tracker-app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live Demo
+                </a>
+                <a
+                  class="btn btn--secondary"
+                  href="https://github.com/cedricdzameshie/job-tracker-app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Repo
+                </a>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+          </article>
 
-    <section id="projects">
-      <h2>PROJECTS</h2>
-      <div class="grid">
-        <div class="grid__item">
-          <div class="card">
-            <img class="card__img" src="Pictures/PricingHP.PNG" alt="Image 1" />
-            <div class="card__content">
-              <h1 class="card__header">Cloud Storage Site</h1>
-              <p class="card__text">
-                a Project using HTML, CSS and JavaScript to make a mock cloud
-                storage website with sign up option.
-              </p>
-              <button
-                class="card__link"
-                onclick="window.open(' https://shogunfrontend.github.io/Cloud-Storage-Site-Pricing-Page/', '_blank')"
-              >
-                View Project
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="grid__item">
-          <div class="card">
-            <img class="card__img" src="Pictures/APlusSS.PNG" alt="Image 2" />
-            <div class="card__content">
-              <h1 class="card__header">A+ Quiz</h1>
-              <p class="card__text">
-                a Project using HTML, CSS, and JavaScript to make a quiz around
-                A+ Topics
-              </p>
-              <button
-                class="card__link"
-                onclick="window.open(' https://shogunfrontend.github.io/APlus-Quiz/', '_blank')"
-              >
-                View Project
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="grid__item">
-          <div class="card">
+          <!-- Todo Management -->
+          <article class="project-card">
             <img
-              class="card__img"
-              src="Pictures/PaperRockScissors.PNG"
-              alt="Image 3"
+              class="project-thumb"
+              src="Pictures/todo-management.png.png"
+              alt="Todo Management app screenshot"
             />
-            <div class="card__content">
-              <h1 class="card__header">Rock Paper Scissors</h1>
-              <p class="card__text">
-                a Project using HTML, CSS, and Javascript to make a game of
-                paper, rock scissors
+            <div class="project-body">
+              <h3 class="project-title">Todo Management</h3>
+              <p class="project-desc">
+                Task management app with clean UI and practical component
+                structure.
               </p>
-              <button
-                class="card__link"
-                onclick="window.open('https://shogunfrontend.github.io/Rock-Paper-Scissors/', '_blank')"
-              >
-                View Project
-              </button>
+
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">CRA</span>
+                <span class="tag">CSS</span>
+              </div>
+
+              <div class="project-actions">
+                <a
+                  class="btn"
+                  href="https://cedricdzameshie.github.io/todo-management-app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live Demo
+                </a>
+                <a
+                  class="btn btn--secondary"
+                  href="https://github.com/cedricdzameshie/todo-management-app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Repo
+                </a>
+              </div>
             </div>
-          </div>
+          </article>
+
+          <!-- Cloud Storage -->
+          <article class="project-card">
+            <img
+              class="project-thumb"
+              src="Pictures/cloud-storage.png.png"
+              alt="Cloud Storage UI screenshot"
+            />
+            <div class="project-body">
+              <h3 class="project-title">Cloud Storage Pricing UI</h3>
+              <p class="project-desc">
+                Responsive pricing and onboarding UI with interactive elements
+                and clean layout.
+              </p>
+
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+
+              <div class="project-actions">
+                <a
+                  class="btn"
+                  href="https://shogunfrontend.github.io/Cloud-Storage-Site-Pricing-Page/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live Demo
+                </a>
+                <a
+                  class="btn btn--secondary"
+                  href="https://github.com/cedricdzameshie/Cloud-Storage-Pricing-Onboarding-UI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Repo
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bakery Placeholder -->
+          <article class="project-card project-card--placeholder">
+            <div class="placeholder-thumb">
+              <div class="placeholder-badge">In Progress</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Bakery Ordering App</h3>
+              <p class="project-desc">
+                Menu + ordering/contact experience for a home bakery — photos,
+                testimonials, and compliance info.
+              </p>
+
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">UI</span>
+                <span class="tag">Planned</span>
+              </div>
+
+              <div class="project-actions">
+                <a class="btn btn--secondary" href="#contact">Follow Updates</a>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="contact">
-      <h2>CONTACT</h2>
-      <div class="box">
-        <div class="left-section">
-          <h3>Lets Connect</h3>
+    <section id="contact" class="section">
+      <div class="section-inner">
+        <header class="section-header">
+          <h2>Contact</h2>
           <p>
-            Feel free to connect with me through any of these methods I'm on to
-            chat or to help with any projects!
+            If you want to collaborate or talk about opportunities, I’m easy to
+            reach.
           </p>
-        </div>
-        <div class="right-section">
-          <div class="icon-container">
-            <a
-              href="https://www.linkedin.com/in/cedric-dzameshie-587628b1/"
-              target="_blank"
-            >
-              <img src="Pictures/linkedin.png" alt="LinkedIn Icon" />
-            </a>
-            <p>Connect with me on LinkedIn</p>
-          </div>
-          <div class="icon-container">
-            <a href="https://github.com/ShogunFrontend" target="_blank">
-              <img src="Pictures/github.png" alt="GitHub Icon" />
-            </a>
-            <p>Check out my projects on GitHub</p>
-          </div>
-          <div class="icon-container">
-            <a href="https://www.instagram.com/shogunfrontend/" target="_blank">
-              <img src="Pictures/instagram.png" alt="Instagram Icon" />
-            </a>
-            <p>Follow me on Instagram</p>
-          </div>
-          <div class="icon-container">
-            <a href="https://twitter.com/ShogunFrontend" target="_blank">
-              <img src="Pictures/twitter.png" alt="Twitter Icon" />
-            </a>
-            <p>Connect with me on Twitter</p>
-          </div>
-        </div>
-      </div>
-    </section>
+        </header>
 
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-left">
-          <h3>Cedric Dzameshie</h3>
-          <p>
-            I am a dedicated beginner in front-end development, constantly
-            honing my skills and expanding my knowledge to craft captivating
-            user experiences as an aspiring frontend web developer.
-          </p>
-        </div>
-        <div class="footer-right">
-          <h3>Socials</h3>
-          <ul class="social-icons">
-            <li>
+        <div class="contact-grid">
+          <!-- Left: CTA -->
+          <div class="contact-card contact-card--primary">
+            <h3>Let’s connect</h3>
+            <p>
+              I’m actively building and improving real projects (React, UI
+              behavior, and full-stack growth). If you’re hiring or want to
+              collaborate, feel free to reach out.
+            </p>
+
+            <div class="contact-actions">
               <a
+                class="btn"
+                href="mailto:YOUR_EMAIL_HERE?subject=Portfolio%20Contact"
+              >
+                Email Me
+              </a>
+              <a
+                class="btn btn--secondary"
                 href="https://www.linkedin.com/in/cedric-dzameshie-587628b1/"
                 target="_blank"
-                ><img src="/Pictures/linkedin.png" alt="LinkedIn"
-              /></a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/shogunfrontend/"
-                target="_blank"
-                ><img src="/Pictures/instagram.png" alt="Instagram"
-              /></a>
-            </li>
-            <li>
-              <a href="https://twitter.com/ShogunFrontend" target="_blank"
-                ><img src="/Pictures/twitter.png" alt="Twitter"
-              /></a>
-            </li>
-            <li>
-              <a href="https://github.com/ShogunFrontend" target="_blank"
-                ><img src="/Pictures/github.png" alt="GitHub"
-              /></a>
-            </li>
-          </ul>
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Links -->
+          <div class="contact-links">
+            <a
+              class="contact-link"
+              href="https://www.linkedin.com/in/cedric-dzameshie-587628b1/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="Pictures/linkedin.png" alt="" aria-hidden="true" />
+              <div>
+                <strong>LinkedIn</strong>
+                <span>Connect professionally</span>
+              </div>
+            </a>
+
+            <a
+              class="contact-link"
+              href="https://github.com/cedricdzameshie"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="Pictures/github.png" alt="" aria-hidden="true" />
+              <div>
+                <strong>GitHub</strong>
+                <span>View repos & progress</span>
+              </div>
+            </a>
+
+            <a
+              class="contact-link"
+              href="https://www.instagram.com/shogunfrontend/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="Pictures/instagram.png" alt="" aria-hidden="true" />
+              <div>
+                <strong>Instagram</strong>
+                <span>Projects & personal brand</span>
+              </div>
+            </a>
+
+            <a
+              class="contact-link"
+              href="https://twitter.com/ShogunFrontend"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="Pictures/twitter.png" alt="" aria-hidden="true" />
+              <div>
+                <strong>X (Twitter)</strong>
+                <span>Updates & networking</span>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; Made by Cedric Dzameshie</p>
+    </section>
+
+    <footer class="site-footer">
+      <div class="section-inner site-footer__inner">
+        <p class="site-footer__text">
+          © <span id="year"></span> Cedric Dzameshie. Built with HTML/CSS/JS.
+        </p>
+
+        <a class="site-footer__top" href="#home" aria-label="Back to top">
+          Back to top ↑
+        </a>
       </div>
     </footer>
 
-    <div class="page-indicator">
-      <div class="indicator"></div>
-      <div class="indicator"></div>
-      <div class="indicator"></div>
-      <div class="indicator"></div>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <div class="page-indicator" aria-label="Section navigation">
+      <button
+        class="indicator"
+        type="button"
+        data-target="#home"
+        aria-label="Home"
+      ></button>
+      <button
+        class="indicator"
+        type="button"
+        data-target="#about"
+        aria-label="About"
+      ></button>
+      <button
+        class="indicator"
+        type="button"
+        data-target="#projects"
+        aria-label="Projects"
+      ></button>
+      <button
+        class="indicator"
+        type="button"
+        data-target="#contact"
+        aria-label="Contact"
+      ></button>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="/Portfolio.js"></script>
   </body>
 </html>

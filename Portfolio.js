@@ -1,87 +1,86 @@
-// Function to handle the hamburger menu click
-function toggleHamburgerMenu() {
-  const hamburgerMenu = document.querySelector(".hamburger-menu");
-  const hamburgerWords = document.querySelector(".hamburger-words");
+/* =========================
+   NAV: Mobile hamburger
+========================= */
+const nav = document.querySelector(".site-nav");
+const hamburger = document.querySelector(".hamburger-menu");
+const mobileLinks = document.querySelectorAll(".mobile-nav a");
 
-  // Toggle active class on hamburger menu
-  hamburgerMenu.classList.toggle("active");
-
-  // Show/hide hamburger words based on hamburger menu active state
-  hamburgerWords.style.display = hamburgerMenu.classList.contains("active")
-    ? "flex"
-    : "none";
+function setNavOpen(isOpen) {
+  nav.classList.toggle("is-open", isOpen);
+  hamburger.setAttribute("aria-expanded", String(isOpen));
 }
 
-// Hamburger menu click event
-document
-  .querySelector(".hamburger-menu")
-  .addEventListener("click", function () {
-    toggleHamburgerMenu(); // Call the toggle function to toggle the hamburger menu
-  });
+hamburger.addEventListener("click", () => {
+  const isOpen = nav.classList.contains("is-open");
+  setNavOpen(!isOpen);
+});
 
-// Smooth scrolling for navigation links
-document.querySelectorAll(".menu a").forEach((link) => {
-  link.addEventListener("click", function (event) {
+/* Close menu after clicking a mobile link */
+mobileLinks.forEach((link) => {
+  link.addEventListener("click", () => setNavOpen(false));
+});
+
+/* Close menu on scroll (mobile only) */
+window.addEventListener("scroll", () => {
+  if (window.innerWidth <= 768 && nav.classList.contains("is-open")) {
+    setNavOpen(false);
+  }
+});
+
+/* Close menu if window resized to desktop */
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 768) setNavOpen(false);
+});
+
+/* =========================
+   NAV: Smooth scrolling
+   (desktop + mobile links)
+========================= */
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const href = link.getAttribute("href");
+    if (!href || href === "#") return;
+
+    const section = document.querySelector(href);
+    if (!section) return;
+
     event.preventDefault();
-    const target = event.currentTarget.getAttribute("href");
-    const section = document.querySelector(target);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+    section.scrollIntoView({ behavior: "smooth" });
 
-      // Close the hamburger menu after clicking a word on small screens
-      if (window.innerWidth <= 768) {
-        toggleHamburgerMenu();
-      }
-    }
+    // If mobile nav is open, close it
+    if (window.innerWidth <= 768) setNavOpen(false);
   });
 });
 
-// Function to update the active indicator
+/* =========================
+   Page indicator (unchanged)
+========================= */
 function updateIndicator() {
-  // Get the height of each section
-  const sectionHeight = window.innerHeight;
-  const sections = document.querySelectorAll("section");
+  const sectionIds = ["#home", "#about", "#projects", "#contact"];
+  const sections = sectionIds
+    .map((id) => document.querySelector(id))
+    .filter(Boolean);
+
   const indicators = document.querySelectorAll(".indicator");
+  const midPoint = window.innerHeight / 2;
 
   sections.forEach((section, index) => {
-    const position = section.getBoundingClientRect();
-    const indicator = indicators[index];
+    const rect = section.getBoundingClientRect();
+    const isActive = rect.top <= midPoint && rect.bottom >= midPoint;
 
-    if (
-      position.top <= sectionHeight / 2 &&
-      position.bottom >= sectionHeight / 2
-    ) {
-      indicator.classList.add("active");
-    } else {
-      indicator.classList.remove("active");
+    if (indicators[index]) {
+      indicators[index].classList.toggle("active", isActive);
     }
   });
 }
 
-// Call updateIndicator when the page loads and on scroll
 window.addEventListener("load", updateIndicator);
 window.addEventListener("scroll", updateIndicator);
 
-// Check window width on page load and resize
-function checkWindowWidth() {
-  const hamburgerMenu = document.querySelector(".hamburger-menu");
-  const hamburgerWords = document.querySelector(".hamburger-words");
-  if (window.innerWidth > 768) {
-    hamburgerMenu.classList.add("closed"); // Add the "closed" class to make the hamburger unopenable
-    hamburgerWords.style.display = "none"; // Hide hamburger words on larger screens
-  } else {
-    hamburgerMenu.classList.remove("closed"); // Remove the "closed" class to make the hamburger openable
-    hamburgerWords.style.display = "none"; // Initially hide hamburger words on smaller screens
-  }
-}
-
-window.addEventListener("load", checkWindowWidth);
-window.addEventListener("resize", checkWindowWidth);
-
-// Close the hamburger menu when the user starts to scroll the page
-window.addEventListener("scroll", function () {
-  const hamburgerMenu = document.querySelector(".hamburger-menu");
-  if (window.innerWidth <= 768 && hamburgerMenu.classList.contains("active")) {
-    toggleHamburgerMenu();
-  }
+document.querySelectorAll(".indicator").forEach((dot) => {
+  dot.addEventListener("click", () => {
+    const target = dot.getAttribute("data-target");
+    const section = document.querySelector(target);
+    if (section) section.scrollIntoView({ behavior: "smooth" });
+  });
 });
